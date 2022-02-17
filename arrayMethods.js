@@ -107,8 +107,8 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 // you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
 // */
 
-const postPrices = orders.map(order =>Math.round(order.price * (order.tax +1)*100)/100)
-console.log(postPrices)
+// const postPrices = orders.map(order =>Math.round(order.price * (order.tax +1)*100)/100)
+// console.log(postPrices)
 
 
 
@@ -128,3 +128,8 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 //   Use a high order method(s) to create to get the sum of bobsTotal.
 // */
 
+const bobsTotal = purchases
+.filter(purchases => purchases.owner === "Bob")
+.reduce((a,c)=> a + c.price, 0)
+
+console.log(bobsTotal)
